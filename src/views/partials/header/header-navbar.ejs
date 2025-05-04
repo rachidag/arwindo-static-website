@@ -1,0 +1,157 @@
+<div class="navbar bg-white border-b border-b-gray-border py-4">
+  <div class="container">
+    <div class="flex items-center justify-between gap-x-8 gap-y-6">
+
+      <a href='./'><img src="@img/logo-dark.png" alt="logo" width="143" height="44" /></a>
+
+      <div class="flex gap-20">
+        
+          <div class="menu-block-wrapper">
+
+            <div class="menu-overlay"></div>
+            <nav class="menu-block" id="append-menu-header">
+              <div class="mobile-menu-head">
+                <div class="go-back">
+                    <i class="ri-arrow-left-s-line"></i>
+                </div>
+                <div class="current-menu-title"></div>
+                <div class="mobile-menu-close">&times;</div>
+              </div>
+              <ul class="site-menu-main">
+                <li class="nav-item nav-item-has-children">
+                  <a href="#" class="nav-link-item drop-trigger">Demo <i class="ri-arrow-down-s-line"></i></a>
+                  <ul class="sub-menu" id="submenu-1">
+                    <li class="sub-menu--item">
+                        <a href='/'>Main demo</a>
+                    </li>
+                    <li class="sub-menu--item">
+                        <a href='/index-2'>IT Tech</a>
+                    </li>
+                    <li class="sub-menu--item">
+                        <a href='/index-3'>Tech Agency</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item nav-item-has-children">
+                  <a href="#" class="nav-link-item drop-trigger">Pages <i class="ri-arrow-down-s-line"></i></a>
+                  <ul class="sub-menu" id="submenu-4">
+                    <li class="sub-menu--item">
+                      <a class='drop-trigger' data-menu-get='h3' href='/about'>About</a>
+                    </li>
+                    <li class="sub-menu--item">
+                      <a class='drop-trigger' data-menu-get='h3' href='/faq'>FAQ</a>
+                    </li>
+                    <li class="sub-menu--item">
+                      <a class='drop-trigger' data-menu-get='h3' href='/pricing'>Pricing</a>
+                    </li>
+                    <li class="sub-menu--item">
+                      <a class='drop-trigger' data-menu-get='h3' href='/testimonials'>Testimonial</a>
+                    </li>
+                    <li class="sub-menu--item nav-item-has-children">
+                        <a href="#" data-menu-get="h3" class="drop-trigger">Team <i class="ri-arrow-right-s-line"></i></a>
+                        <ul class="sub-menu shape-none" id="submenu-5">
+                          <li class="sub-menu--item">
+                            <a href='/team'>Teams</a>
+                          </li>
+                          <li class="sub-menu--item">
+                            <a href='/team-details'>Teams Details</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu--item nav-item-has-children">
+                        <a href="#" data-menu-get="h3" class="drop-trigger">Portfolio <i class="ri-arrow-right-s-line"></i></a>
+                        <ul class="sub-menu shape-none" id="submenu-6">
+                          <li class="sub-menu--item">
+                            <a href='/portfolio'>Portfolio</a>
+                          </li>
+                          <li class="sub-menu--item">
+                            <a href='/portfolio-2'>Portfolio 2</a>
+                          </li>
+                          <li class="sub-menu--item">
+                            <a href='/portfolio-details'>Portfolio Details</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu--item nav-item-has-children">
+                        <a href="#" data-menu-get="h3" class="drop-trigger">E-commerce <i class="ri-arrow-right-s-line"></i></a>
+                        <ul class="sub-menu shape-none" id="submenu-8">
+                          <li class="sub-menu--item">
+                            <a href='/products'>Product</a>
+                          </li>
+                          <li class="sub-menu--item">
+                            <a href='/product-details'>Product Details</a>
+                          </li>
+                          <li class="sub-menu--item">
+                            <a href='/cart'>Cart</a>
+                          </li>
+                          <li class="sub-menu--item">
+                            <a href='/checkout'>Checkout</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu--item">
+                      <a class='drop-trigger' data-menu-get='h3' href='/404'>404 Page</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item nav-item-has-children">
+                  <a href="#" class="nav-link-item drop-trigger">Services <i class="ri-arrow-down-s-line"></i></a>
+                  <ul class="sub-menu" id="submenu-2">
+                    <li class="sub-menu--item">
+                      <a href='/services'>Services</a>
+                    </li>
+                    <li class="sub-menu--item">
+                      <a href='/service-details'>Service Details</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item nav-item-has-children">
+                  <a href="#" class="nav-link-item drop-trigger">Blog <i class="ri-arrow-down-s-line"></i></a>
+                  <ul class="sub-menu" id="submenu-3">
+                    <li class="sub-menu--item">
+                      <a href='/blog'>Blog</a>
+                    </li>
+                    <li class="sub-menu--item">
+                      <a href='/blog-2'>Blog 2</a>
+                    </li>
+                    <li class="sub-menu--item">
+                      <a href='/blog-details'>Blogs Details</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class='nav-link-item' href='/contact'>Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="flex items-center gap-5">
+            <!-- Responsive Offcanvas Menu Button -->
+            <div class="block lg:hidden">
+                <button id="openBtn" class="hamburger-menu mobile-menu-trigger">
+                    <span class="bg-black before:bg-black after:bg-black"></span>
+                </button>
+            </div>
+            <!-- Responsive Offcanvas Menu Button -->
+
+            <!-- Search Button -->
+            <button class="search-open">
+                <i class="ri-search-line"></i>
+            </button>
+            <!-- Search Button -->
+
+            <!-- Info Offcanvas Button -->
+            <button class="menu-info-open group hidden flex-col gap-y-1.5 lg:inline-flex">
+                <span class="ml-auto mr-1.5 block h-0.5 w-10 bg-black transition-all duration-300 group-hover:-translate-x-2.5"></span>
+                <span class="block h-0.5 w-[60px] bg-black"></span>
+                <span class="ml-1.5 block h-0.5 w-10 bg-black transition-all duration-300 group-hover:translate-x-2.5"></span>
+            </button>
+            <!-- Info Offcanvas Button -->
+          </div>
+
+      </div>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="card <%= locals.class || '' %>">
+    <% if (locals.title) { %>
+        <h3 class="card-title"><%= locals.title %></h3>
+    <% } %>
+    <div class="card-body">
+        <%= locals.content %>
+    </div>
+</div>

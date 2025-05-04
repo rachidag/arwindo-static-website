@@ -1,0 +1,6 @@
+<div class="alert alert-<%= locals.type || 'info' %> <%= locals.class || '' %>">
+    <%= locals.message %>
+    <% if (locals.dismissible) { %>
+      <button class="close-btn">&times;</button>
+    <% } %>
+</div>

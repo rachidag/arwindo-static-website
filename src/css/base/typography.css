@@ -1,0 +1,34 @@
+@layer base {
+
+    h1, 
+    h2, 
+    h3, 
+    h4, 
+    h5, 
+    h6 {
+        @apply font-bold font-afacad text-black;
+    }
+
+    h1 {
+        @apply text-3xl mb-3;
+    }
+
+    p {}
+
+    a {}
+
+    ul {}
+
+    ol {}
+
+    li {}
+
+    blockquote {}
+
+    pre {}
+
+    code {}
+
+    hr {}
+    
+}

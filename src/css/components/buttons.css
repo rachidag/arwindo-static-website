@@ -1,0 +1,15 @@
+@layer components {
+    .btn {
+        @apply bg-primary text-white px-4 py-2 border border-primary inline-block 
+                font-medium uppercase no-underline transition-all 
+                ease-in-out duration-600;
+
+        @variant hover {
+            @apply bg-transparent text-primary;
+        }
+
+        @variant focus {
+            @apply underline;
+        }
+    }
+}

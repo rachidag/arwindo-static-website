@@ -1,0 +1,29 @@
+{
+  "name": "arwindo",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@fontsource/afacad": "^5.2.6",
+    "remixicon": "^4.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "ejs": "^3.1.10",
+    "esbuild-loader": "^4.3.0",
+    "html-bundler-webpack-plugin": "^4.20.2",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^10.1.6",
+    "tailwindcss": "^4.1.4",
+    "terser-webpack-plugin": "^5.3.14",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  }
+}

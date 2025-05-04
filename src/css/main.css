@@ -1,0 +1,33 @@
+/* Tailwind config file */
+@config "../../tailwind.config.js";
+
+/* Fonts */
+@import '@fontsource/afacad/400.css';
+@import '@fontsource/afacad/500.css';
+@import '@fontsource/afacad/600.css';
+@import '@fontsource/afacad/700.css';
+
+/* Icons */
+@import 'remixicon/fonts/remixicon.css';
+
+/* Tailwind */
+@import "tailwindcss";
+
+/* Variables */
+@import "./abstract/variables.css";
+
+/* Base */
+@import "./base/base.css";
+@import "./base/typography.css";
+@import "./base/forms.css";
+@import "./base/tables.css";
+
+/* Components */
+@import "./components/cards.css";
+@import "./components/buttons.css";
+
+/* Utilities */
+@import "./utilities/utilities.css";
+
+/* Custom */
+@import "./custom/menu.css";
