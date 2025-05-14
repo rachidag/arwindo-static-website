@@ -1,5 +1,355 @@
 @layer base {
-    form {
 
+    /* Textual inputs, file and textarea */
+
+    [type='text'], 
+    [type='password'], 
+    [type='date'], 
+    [type='datetime'], 
+    [type='datetime-local'], 
+    [type='month'], 
+    [type='week'], 
+    [type='email'], 
+    [type='number'], 
+    [type='search'], 
+    [type='tel'], 
+    [type='time'], 
+    [type='url'], 
+    [type='color'], 
+    [type='file'], 
+    textarea {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 1.125rem !important;
+        font-size: .95rem !important; 
+        font-weight: var(--font-weight-normal);
+        line-height: 1.5;
+        color: var(--color-black);
+        background-color: var(--color-white);
+        background-clip: padding-box;
+        border: 1px solid var(--color-gray-border) !important;
+        appearance: none;
+        border-radius: var(--radius-xs);
+        transition: all .3s ease 0s;
+
+        &:focus {
+            color: var(--color-black);
+            background-color: var(--color-white);
+            border-color: var(--color-black) !important;
+            outline: 0;
+        }
+
+        &::-webkit-date-and-time-value {
+            height: 1.5em;
+        }
+
+        &::placeholder {
+            color: var(--color-gray-text);
+            opacity: 1;
+        }
+
+        &:disabled,
+        &[readonly] {
+            background-color: var(--color-gray-text);
+            border-color: var(--color-gray-border);
+            opacity: 1;
+        }
+    }
+
+    textarea {
+        min-height: 2.5rem;
+    }
+
+    [type="file"] {
+        overflow: hidden;
+        padding: 0.75rem !important;
+    
+        &:not(:disabled):not([readonly]) {
+            cursor: pointer;
+        }
+    
+        &::file-selector-button {
+            padding: 0.75rem;
+            margin: -0.75rem;
+            margin-inline-end: 0.65rem;
+            color: var(--color-black);
+            background-color: var(--color-gray-bg);
+            pointer-events: none;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 0;
+            border-inline-end-width: 1px;
+            border-radius: 0;
+            transition: all .3s ease 0s;
+        }
+
+        &:hover:not(:disabled):not([readonly])::file-selector-button {
+            background-color: var(--color-gray-bg);
+        }
+
+        &::-webkit-file-upload-button {
+            padding: 1.2rem;
+            margin: -1.2rem;
+            margin-inline-end: 0.65rem;
+            color: var(--color-black);
+            background-color: var(--color-gray-bg);
+            pointer-events: none;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 0;
+            border-inline-end-width: 1px;
+            border-radius: 0;
+            transition: all .3s ease 0s;
+        }
+
+        &:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
+            background-color: var(--color-gray-bg);
+        }
+    }
+
+    [type='color'] {
+        width: 3rem;
+        height: auto; 
+        padding: 0.3125rem !important;
+    
+        &:not(:disabled):not([readonly]) {
+            cursor: pointer;
+        }
+        
+        &::-moz-color-swatch {
+            height: 1.5em;
+            border-radius: var(--radius-xs);
+        }
+        
+        &::-webkit-color-swatch {
+            height: 1.5em;
+            border-radius: var(--radius-xs);
+        }
+    }
+
+    [type='date'], 
+    [type='datetime'], 
+    [type='datetime-local'], 
+    [type='month'], 
+    [type='week'],
+    [type='time'] {
+        &::-webkit-date-and-time-value {
+            height: 1.5em;
+        }
+    }
+
+    /* Select */
+
+    select {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 2.25rem 0.75rem 1.125rem;
+        -moz-padding-start: 0.6875rem;
+        font-size: 0.9375rem;
+        font-weight: var(--font-weight-normal);
+        line-height: var(--leading-normal);
+        color: var(--color-black);
+        background-color: var(--color-white);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23687799' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 1rem 0.75rem;
+        border: 1px solid var(--color-gray-border);
+        border-radius: var(--radius-xs);
+        appearance: none;
+        transition: all .3s ease 0s;
+      
+        &:focus {
+            border-color: var(--color-gray-border);
+            outline: 0;
+        }
+      
+        &[multiple],
+        &[size]:not([size="1"]) {
+            padding-right: 0.875rem;
+            background-image: none;
+        }
+      
+        &:disabled {
+            color: var(--color-black);
+            background-color: var(--color-gray-bg);
+            border-color: var(--color-gray-border);
+        }
+      
+        &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 var(--color-black);
+        }
+    }
+
+    /* Checkboxes & Radio buttons */
+
+    [type="checkbox"],
+    [type="radio"] {
+        float: left;
+        cursor: pointer;
+        width: 1rem;
+        height: 1rem;
+        /* margin-left: -1rem; */
+        margin-top: 0.3125rem !important; /* line-height minus check height */
+        vertical-align: top;
+        background-color: var(--color-white);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        border: 1px solid var(--color-gray-border) !important;
+        appearance: none;
+        print-color-adjust: exact; /* Keep themed appearance for print */
+        transition: all .3s ease 0s;
+
+        &:active {
+            filter: brightness(90%);
+        }
+
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+
+        &:checked {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary) !important;
+            border-color: var(--radius-xs);
+        }
+
+        &:disabled {
+            pointer-events: none;
+            filter: none;
+            opacity: .5;
+        }
+
+        /* Use disabled attribute in addition of :disabled pseudo-class */
+        /* See: https://github.com/twbs/bootstrap/issues/28247 */
+        &[disabled],
+        &:disabled {
+            & ~ label {
+                opacity: .5;
+            }
+        }
+
+        & + label {
+            color: var(--color-black);
+            cursor: pointer;
+            margin-bottom: 0;
+            padding-left: 0.625rem;
+            display: inline-block;
+            font-size: 0.9375rem !important;
+        }
+    }
+
+    [type="checkbox"] {
+        border-radius: var(--radius-xs);
+    
+        &:checked {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+        }
+    
+        &:indeterminate {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
+        }
+    }
+    
+    [type="radio"] {
+        border-radius: 50%;
+    
+        &:checked {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+        }
+    }
+
+    /* Range */
+
+    [type="range"] {
+        width: 100%;
+        height: 1.5rem;
+        padding: 0;
+        background-color: transparent;
+        appearance: none;
+      
+        &::-webkit-slider-thumb {
+            width: 1rem;
+            height: 1rem;
+            margin-top: -0.25rem; /* Webkit specific */
+            background-color: var(--color-primary);
+            border: 0;
+            border-radius: 1rem;
+            appearance: none;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        
+            &:active {
+                background-color: var(--color-primary);
+            }
+        }
+      
+        &::-moz-range-thumb {
+            width: 1rem;
+            height: 1rem;
+            background-color: var(--color-primary);
+            border: 0;
+            border-radius: 1rem;
+            appearance: none;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      
+            &:active {
+                background-color: var(--color-primary);
+            }
+        }
+      
+        &::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 0.5rem;
+            color: transparent;
+            cursor: pointer;
+            background-color: var(--color-gray-bg);
+            border-color: transparent;
+            border-radius: 1rem;
+        }
+      
+        &::-moz-range-track {
+            width: 100%;
+            height: 0.5rem;
+            color: transparent;
+            cursor: pointer;
+            background-color: var(--color-gray-bg);
+            border-color: transparent;
+            border-radius: 1rem;
+        }
+      
+        &:focus {
+            outline: 0;
+        
+            /* Pseudo-elements must be split across multiple rulesets to have an effect. */
+            /* No box-shadow() mixin for focus accessibility. */
+            &::-webkit-slider-thumb { 
+                box-shadow: 0 0 0 1px var(--color-white), 0 0 0 0.4rem rgba(var(--color-primary), 0.25); 
+            }
+            &::-moz-range-thumb { 
+                box-shadow: 0 0 0 1px var(--color-white), 0 0 0 0.4rem rgba(var(--color-primary), 0.25); 
+            }
+        }
+      
+        &:disabled {
+            pointer-events: none;
+        
+            &::-webkit-slider-thumb {
+                background-color: var(--color-gray-bg);
+            }
+        
+            &::-moz-range-thumb {
+                background-color: var(--color-gray-bg);
+            }
+        }
+      
+        &::-moz-focus-outer {
+            border: 0;
+        }
     }
 }
+

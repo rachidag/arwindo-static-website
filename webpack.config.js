@@ -10,9 +10,10 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@img': path.join(__dirname, 'src/img'),
       '@js': path.join(__dirname, 'src/js'),
       '@css': path.join(__dirname, 'src/css'),
+      '@img': path.join(__dirname, 'src/img'),
+      '@media': path.join(__dirname, 'src/media'),
     },
   },
   plugins: [
@@ -46,6 +47,13 @@ module.exports = {
         type: 'asset/resource',
         generator: {
           filename: 'assets/img/[name].[hash:8][ext]'
+        }
+      },
+      {
+        test: /\.(mp3|wav|aac|flac|ogg|m4a|mp4|mov|avi|mkv|webm)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/media/[name].[hash:8][ext]'
         }
       },
       {

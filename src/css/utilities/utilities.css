@@ -1,12 +1,16 @@
 @utility container {
-    @apply w-full max-w-full mx-auto px-5;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1.25rem;
 
     @variant sm {
-        @apply max-w-[86.25rem] px-[1.875rem];
+        max-width: 86.25rem;
+        padding: 0 1.875rem;
     }
 
     @variant lg {
-        @apply px-10;
+        padding: 0 2.5rem;
     }
 }
 

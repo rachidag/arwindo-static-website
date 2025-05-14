@@ -1,15 +1,98 @@
 @layer components {
-    .btn {
-        @apply bg-primary text-white px-4 py-2 border border-primary inline-block 
-                font-medium uppercase no-underline transition-all 
-                ease-in-out duration-600;
 
-        @variant hover {
-            @apply bg-transparent text-primary;
+    /* Default button */
+    .btn {
+        background-color: var(--color-primary);
+        border: 1px solid transparent;
+        border-radius: 0;
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: var(--font-weight-medium);
+        padding: 0.75rem 1.5rem;
+        line-height: 1.4;
+        color: var(--color-white);
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        max-width: 100%;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: none;
+        transition: all .3s ease 0s;
+    
+        &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            text-decoration: none;
+        }
+    
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+    
+        &:active {
+            box-shadow: none;
         }
 
-        @variant focus {
-            @apply underline;
+        &--disabled,
+        &:disabled {
+            pointer-events: none;
+            opacity: 0.65;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+        }
+    }
+
+    /* Link button */
+    .btn.btn--link {
+        font-weight: var(--font-weight-normal);
+        color: var(--color-primary);
+        background-color: transparent;
+        border-color: transparent;
+        text-decoration: underline;
+
+        &:hover,
+        &:active {
+            border-color: transparent;
+            color: var(--color-primary);
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        &:focus {
+            text-decoration: underline;
+        }
+        
+        &--disabled,
+        &:disabled {
+            color: var(--color-gray-text);
+        }
+    }
+
+    /* Outlined button */
+    .btn.btn--outline {
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+        background-color: transparent;
+
+        &:hover,
+        &:active {
+            color: var(--color-white);
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &--disabled,
+        &:disabled {
+            color: var(--color-primary);
+            background-color: transparent;
         }
     }
 }

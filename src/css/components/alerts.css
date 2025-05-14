@@ -1,0 +1,57 @@
+@layer components {
+
+    /* Default */
+    .alert {
+        position: relative;
+        padding: 0.9375rem 1.25rem;
+        margin-bottom: 1.25rem;
+        background-color: var(--color-gray-bg);
+        border: 1px solid var(--color-gray-border);
+        border-radius: var(--radius-xs);
+    
+        * {
+            color: inherit;
+        }
+    
+        :last-child {
+            margin-bottom: 0;
+        }
+    
+        a {
+            font-weight: var(--font-weight-medium);
+            text-decoration: underline;
+            
+            &:hover {
+                color: inherit;
+            }
+        }
+    }
+    
+    /* Info */
+    .alert.alert--info {
+        color: darken(var(--color-info), 60);
+        background-color: var(--color-info);
+        border-color: darken(var(--color-info), 20);
+    }
+    
+    /* Success */
+    .alert.alert--success {
+        color: darken(var(--color-success), 60);
+        background-color: var(--color-success);
+        border-color: darken(var(--color-success), 20);
+    }
+    
+    /* Warning */
+    .alert.alert--warning {
+        color: darken(var(--color-warning), 60);
+        background-color: var(--color-warning);
+        border-color: darken(var(--color-warning), 20);
+    }
+    
+    /* Error */
+    .alert.alert--error {
+        color: darken(var(--color-error), 60);
+        background-color: var(--color-error);
+        border-color: darken(var(--color-error), 20);
+    }
+}
