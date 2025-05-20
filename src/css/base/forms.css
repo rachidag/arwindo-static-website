@@ -20,22 +20,22 @@
     textarea {
         display: block;
         width: 100%;
-        padding: 0.75rem 1.125rem !important;
+        padding: 0.65rem 0.95rem !important;
         font-size: .95rem !important; 
         font-weight: var(--font-weight-normal);
         line-height: 1.5;
-        color: var(--color-black);
+        color: var(--color-gray-text);
         background-color: var(--color-white);
         background-clip: padding-box;
         border: 1px solid var(--color-gray-border) !important;
         appearance: none;
         border-radius: var(--radius-xs);
-        transition: all .3s ease 0s;
+        transition: var(--transition-base);
 
         &:focus {
-            color: var(--color-black);
+            color: var(--color-gray-text);
             background-color: var(--color-white);
-            border-color: var(--color-black) !important;
+            border-color: var(--color-gray-text-light) !important;
             outline: 0;
         }
 
@@ -44,13 +44,13 @@
         }
 
         &::placeholder {
-            color: var(--color-gray-text);
+            color: var(--color-gray-text-light);
             opacity: 1;
         }
 
         &:disabled,
         &[readonly] {
-            background-color: var(--color-gray-text);
+            background-color: var(--color-gray-bg);
             border-color: var(--color-gray-border);
             opacity: 1;
         }
@@ -62,17 +62,16 @@
 
     [type="file"] {
         overflow: hidden;
-        padding: 0.75rem !important;
     
         &:not(:disabled):not([readonly]) {
             cursor: pointer;
         }
     
         &::file-selector-button {
-            padding: 0.75rem;
-            margin: -0.75rem;
-            margin-inline-end: 0.65rem;
-            color: var(--color-black);
+            padding: 0.65rem 0.95rem;
+            margin: -0.65rem -0.95rem;
+            margin-inline-end: 0.95rem;
+            color: var(--color-gray-text);
             background-color: var(--color-gray-bg);
             pointer-events: none;
             border-color: transparent;
@@ -80,18 +79,18 @@
             border-width: 0;
             border-inline-end-width: 1px;
             border-radius: 0;
-            transition: all .3s ease 0s;
+            transition: var(--transition-base);
         }
 
         &:hover:not(:disabled):not([readonly])::file-selector-button {
-            background-color: var(--color-gray-bg);
+            background-color: var(--color-gray-border);
         }
 
         &::-webkit-file-upload-button {
-            padding: 1.2rem;
-            margin: -1.2rem;
-            margin-inline-end: 0.65rem;
-            color: var(--color-black);
+            padding: 0.65rem 0.95rem;
+            margin: -0.65rem -0.95rem;
+            margin-inline-end: 0.95rem;
+            color: var(--color-gray-text);
             background-color: var(--color-gray-bg);
             pointer-events: none;
             border-color: transparent;
@@ -99,11 +98,11 @@
             border-width: 0;
             border-inline-end-width: 1px;
             border-radius: 0;
-            transition: all .3s ease 0s;
+            transition: var(--transition-base);
         }
 
         &:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-            background-color: var(--color-gray-bg);
+            background-color: var(--color-gray-border);
         }
     }
 
@@ -148,7 +147,7 @@
         font-size: 0.9375rem;
         font-weight: var(--font-weight-normal);
         line-height: var(--leading-normal);
-        color: var(--color-black);
+        color: var(--color-gray-text);
         background-color: var(--color-white);
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23687799' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
         background-repeat: no-repeat;
@@ -157,7 +156,7 @@
         border: 1px solid var(--color-gray-border);
         border-radius: var(--radius-xs);
         appearance: none;
-        transition: all .3s ease 0s;
+        transition: var(--transition-base);
       
         &:focus {
             border-color: var(--color-gray-border);
@@ -171,14 +170,14 @@
         }
       
         &:disabled {
-            color: var(--color-black);
+            color: var(--color-gray-text);
             background-color: var(--color-gray-bg);
             border-color: var(--color-gray-border);
         }
       
         &:-moz-focusring {
             color: transparent;
-            text-shadow: 0 0 0 var(--color-black);
+            text-shadow: 0 0 0 var(--color-gray-text);
         }
     }
 
@@ -186,12 +185,9 @@
 
     [type="checkbox"],
     [type="radio"] {
-        float: left;
         cursor: pointer;
         width: 1rem;
         height: 1rem;
-        /* margin-left: -1rem; */
-        margin-top: 0.3125rem !important; /* line-height minus check height */
         vertical-align: top;
         background-color: var(--color-white);
         background-repeat: no-repeat;
@@ -200,7 +196,7 @@
         border: 1px solid var(--color-gray-border) !important;
         appearance: none;
         print-color-adjust: exact; /* Keep themed appearance for print */
-        transition: all .3s ease 0s;
+        transition: var(--transition-base);
 
         &:active {
             filter: brightness(90%);
@@ -221,24 +217,6 @@
             pointer-events: none;
             filter: none;
             opacity: .5;
-        }
-
-        /* Use disabled attribute in addition of :disabled pseudo-class */
-        /* See: https://github.com/twbs/bootstrap/issues/28247 */
-        &[disabled],
-        &:disabled {
-            & ~ label {
-                opacity: .5;
-            }
-        }
-
-        & + label {
-            color: var(--color-black);
-            cursor: pointer;
-            margin-bottom: 0;
-            padding-left: 0.625rem;
-            display: inline-block;
-            font-size: 0.9375rem !important;
         }
     }
 
@@ -328,10 +306,11 @@
             /* Pseudo-elements must be split across multiple rulesets to have an effect. */
             /* No box-shadow() mixin for focus accessibility. */
             &::-webkit-slider-thumb { 
-                box-shadow: 0 0 0 1px var(--color-white), 0 0 0 0.4rem rgba(var(--color-primary), 0.25); 
+                box-shadow: 0 0 0 1px var(--color-white), 0 0 0 0.25rem var(--color-gray-border);
             }
+            
             &::-moz-range-thumb { 
-                box-shadow: 0 0 0 1px var(--color-white), 0 0 0 0.4rem rgba(var(--color-primary), 0.25); 
+                box-shadow: 0 0 0 1px var(--color-white), 0 0 0 0.25rem var(--color-gray-border);
             }
         }
       
@@ -339,7 +318,7 @@
             pointer-events: none;
         
             &::-webkit-slider-thumb {
-                background-color: var(--color-gray-bg);
+                background-color: var(--color-gray-text);
             }
         
             &::-moz-range-thumb {
@@ -353,3 +332,68 @@
     }
 }
 
+@layer components {
+    
+    .form-check {
+        display: block;
+        min-height: 1.5rem;
+        padding-left: 1rem;
+        margin-bottom: 0.25rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        [type="checkbox"],
+        [type="radio"] {
+            float: left;
+            margin-left: -1rem;
+            margin-top: 0.25rem !important; /* line-height minus check height */
+
+            & ~ label {
+                color: var(--color-gray-text);
+                cursor: pointer;
+                margin-bottom: 0;
+                padding-left: 0.625rem;
+                display: inline-block;
+                font-size: 0.9375rem !important;
+            }
+
+            /* Use disabled attribute in addition of :disabled pseudo-class */
+            /* See: https://github.com/twbs/bootstrap/issues/28247 */
+            &[disabled],
+            &:disabled {
+                & ~ label {
+                    opacity: .5;
+                }
+            }
+        }
+    }
+
+    .form-switch {
+        padding-left: 2em;
+    
+        [type="checkbox"],
+        [type="radio"] {
+            width: 2em;
+            margin-left: -2em;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+            background-position: left center;
+            border-radius: 2em;
+            transition: background-position 0.15s ease-in-out;
+
+            &:focus {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2386b7fe'/%3e%3c/svg%3e");
+            }
+
+            &:checked {
+                background-position: right center;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+            }
+
+            & + label {
+                padding-left: 0.75rem;
+            }
+        }
+    }
+}

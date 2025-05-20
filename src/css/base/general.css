@@ -1,0 +1,33 @@
+@layer components {
+
+    .wrap {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+
+        @variant sm {
+            max-width: 86.25rem;
+            padding: 0 1.875rem;
+        }
+
+        @variant lg {
+            padding: 0 2.5rem;
+        }
+    }
+
+    .wrap-fluid {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      
+        @variant sm {
+            padding: 0 1.875rem;
+        }
+      
+        @variant lg {
+            padding: 0 2.5rem;
+        }
+    }
+}

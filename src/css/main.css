@@ -2,10 +2,11 @@
 @config "../../tailwind.config.js";
 
 /* Fonts */
-@import '@fontsource/afacad/400.css';
-@import '@fontsource/afacad/500.css';
-@import '@fontsource/afacad/600.css';
-@import '@fontsource/afacad/700.css';
+@import '@fontsource/afacad/latin-400.css';
+@import '@fontsource/afacad/latin-500.css';
+@import '@fontsource/afacad/latin-600.css';
+@import '@fontsource/afacad/latin-700.css';
+/* @import url('https://fonts.googleapis.com/css2?family=Afacad:wght@400..700&display=swap'); */
 
 /* Icons */
 @import 'remixicon/fonts/remixicon.css';
@@ -19,15 +20,12 @@
 /* Base */
 @import "./base/variables.css";
 @import "./base/base.css";
+@import "./base/general.css";
 @import "./base/forms.css";
 @import "./base/tables.css";
-
-/* Components */
-@import "./components/buttons.css";
-@import "./components/alerts.css";
-
-/* Utilities */
-@import "./utilities/utilities.css";
+@import "./base/buttons.css";
+@import "./base/alerts.css";
+@import "./base/utilities.css";
 
 /* Custom */
 @import "./custom/menu.css";
